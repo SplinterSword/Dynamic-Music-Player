@@ -15,6 +15,8 @@ body{
 }
 .right{
     width: 75vw;
+    margin: 16px 0;
+    position: relative;
 }
 .home ul li{
     display: flex;
@@ -63,13 +65,11 @@ body{
 .footer a{
     color: grey;
 }
-.right{
-    margin: 16px 0;
-}
 .header{
     display: flex;
     justify-content: space-between;
     background-color: rgb(34 34 34);
+    height: 72px;
 }
 .header > *{
     padding: 20px;
@@ -82,6 +82,8 @@ body{
     gap: 10px;
     flex-wrap: wrap;
     margin: 30px;
+    max-height: 70vh;
+    overflow-y: scroll;
 }
 .card{
     position: relative;
@@ -111,4 +113,98 @@ body{
     top: 170px;
     opacity: 1;
 }
-
+.buttons > *{
+    margin: 0 12px;
+}
+.signupbtn{
+    background-color: rgb(34 34 34);
+    color: rgb(151, 144, 144);
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.signupbtn:hover{
+    font-size: 17px;
+    color: white;
+}
+.loginbtn{
+    background-color: white;
+    border-radius: 21px;
+    color: black;
+    padding: 10px;
+    width: 80px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+.loginbtn:hover{
+    font-weight: bold;
+    font-size: 17px;
+}
+.playbar{
+    position: fixed;
+    bottom: 40px;
+    filter: invert(1);
+    background: #dad5d5;
+    border-radius: 10px;
+    width: 70vw;
+    padding: 12px;
+    height: 40px;
+}
+.songbuttons{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+.songList{
+    height: 550px;
+    overflow: auto;
+    margin-bottom: 44px;
+}
+.songList ul{
+    padding: 0 42px;
+}
+.songList ul li{
+    list-style-type: decimal;
+    display: flex;
+    gap: 34px;
+    cursor: pointer;
+    padding: 13px;
+    border: 1px solid white;
+    margin: 12px 0;
+    border-radius: 5px;
+    position: relative;
+}
+.songList ul li .info{
+    width: 200px;
+}
+.playnow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+}
+.seekbar{
+    height: 2px;
+    width: 98%;
+    background-color: black;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    margin: 10px auto;
+}
+.circle{
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    background-color: black;
+    position: relative;
+    bottom: 6px;
+    left: 0%;
+    transition: left 0.5s;
+}

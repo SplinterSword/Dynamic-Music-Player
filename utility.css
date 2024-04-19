@@ -20,3 +20,16 @@
 .p-1{
     padding: 10px;  
 }
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #333; /* Dark background color */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #666; /* Dark color for the scrollbar */
+    border-radius: 5px;
+  }
+  
