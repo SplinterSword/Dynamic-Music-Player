@@ -154,10 +154,25 @@ body{
     padding: 12px;
     height: 40px;
 }
+.abovebar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.songinfo , .songtime{
+    color: black;
+    padding: 0 12px;
+}
 .songbuttons{
     display: flex;
     justify-content: center;
     gap: 16px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.songbuttons img{
+    cursor: pointer;
 }
 .songList{
     height: 550px;
@@ -190,13 +205,14 @@ body{
     bottom: 20px;
 }
 .seekbar{
-    height: 2px;
+    height: 4px;
     width: 98%;
     background-color: black;
     border-radius: 10px;
     position: absolute;
     bottom: 0;
     margin: 10px auto;
+    cursor: pointer;
 }
 .circle{
     width: 13px;
@@ -204,7 +220,7 @@ body{
     border-radius: 13px;
     background-color: black;
     position: relative;
-    bottom: 6px;
+    bottom: 5px;
     left: 0%;
-    transition: left 0.5s;
+    transition: left 0.1s;
 }
