@@ -1,6 +1,7 @@
 console.log("Lets write javascript")
 
 let currentSong = new Audio();
+let songs;
 
 async function getSongs(){
     let a = await fetch("http://127.0.0.1:5500/songs/");
@@ -28,13 +29,18 @@ const playMusic = (track,artist)=>{
 
 async function main(){
     // Get the list of all the songs
-    let songs = await getSongs();
+    songs = await getSongs();
     currentSong.src = "/songs/" + "Dreamer" + "-" + "Roa" + ".mp3";
     document.querySelector(".songinfo").innerHTML = "Dreamer" + "-" + "Roa";
     document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/03:15`;
 
     //seconds to minutes
     function secondsToMinutesSeconds(seconds) {
+        // Base Case
+        if (isNaN(seconds) || seconds < 0){
+            return "00:00";
+        }
+
         // Calculate the minutes and remaining seconds
         let minutes = Math.floor(seconds / 60);
         let remainingSeconds = Math.floor(seconds % 60);
@@ -99,6 +105,32 @@ async function main(){
         let percent = (e.offsetX/e.target.getBoundingClientRect().width)*100;
         document.querySelector(".circle").style.left = percent + "%";
         currentSong.currentTime = currentSong.duration * (percent/100);
+    })
+
+    // Add an event listener for hamburger
+    document.querySelector(".hamburger").addEventListener("click",()=>{
+        document.querySelector(".left").style.left = 0;
+    })
+    document.querySelector(".close").addEventListener("click",()=>{
+        document.querySelector(".left").style.left = -120 + "%";
+    })
+
+    // Add an event listener to previous and next
+    previous.addEventListener("click",()=>{
+        let index = songs.indexOf(currentSong.src.split("/songs/")[1].replaceAll(" ","%20"));
+        if((index-1) >= 0){
+            let track = songs[index-1].replaceAll("%20"," ").split("-")[0];
+            let artist = songs[index-1].replaceAll("%20"," ").split("-")[1];
+            playMusic(track,artist.replace(".mp3",""));
+        }
+    })
+    next.addEventListener("click",()=>{
+        let index = songs.indexOf(currentSong.src.split("/songs/")[1].replaceAll(" ","%20"));
+        if((index+1) < songs.length){
+            let track = songs[index+1].replaceAll("%20"," ").split("-")[0];
+            let artist = songs[index+1].replaceAll("%20"," ").split("-")[1];
+            playMusic(track,artist.replace(".mp3",""));
+        }
     })
 };
 

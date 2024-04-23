@@ -11,6 +11,9 @@
   <body>
     <div class="container flex bg-black">
       <div class="left">
+        <div class="close">
+          <img class="invert" src="cross.svg" alt="close">
+        </div>
         <div class="home bg-grey rounded m-1 p-1">
           <div class="logo">
             <img width="110" class="invert" src="logo.svg" />
@@ -68,8 +71,11 @@
       <div class="right bg-grey rounded">
         <div class="header">
           <div class="nav">
-            <img src="nav_left.svg" alt="left">
-            <img src="nav_right.svg" alt="left">
+            <img class="hamburger invert" src="hamburger.svg" alt="hamburger">
+            <div class="leftrighticons">
+              <img src="nav_left.svg" alt="left">
+              <img src="nav_right.svg" alt="left">
+            </div>
           </svg>
           </div>
           <div class="buttons">
@@ -108,7 +114,12 @@
                 <img id = "play" src="play_mediaplayer.svg" alt="">
                 <img id = "next" src="nextsong.svg" alt="">
               </div>
-              <div class="songtime"></div>
+              <div class="timevol">
+                <div class="songtime"></div>
+                <div class="volume">
+                  <img src="volume.svg" alt="volume">
+                </div>
+              </div>
             </div>
           </div>
         </div>
