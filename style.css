@@ -93,7 +93,7 @@ body{
     gap: 10px;
     flex-wrap: wrap;
     margin: 30px;
-    max-height: 50vh;
+    max-height: 65vh;
     overflow-y: auto;
 }
 .card{
